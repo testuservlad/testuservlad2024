@@ -11,7 +11,7 @@
 
 ### Testing Documentation
 
-- [Checklists](https://github.com/checklistshouseindahouse/checklists)
+- [Checklists](https://github.com/houseindahouse/checklists)
 - [Test-Suites and Test-Cases](https://github.com/houseindahouse/test-cases)
 - [Bug-Reports](https://github.com/houseindahouse/bug-reports)
 - [SQL Queries](https://github.com/houseindahouse/SQL-queries)
