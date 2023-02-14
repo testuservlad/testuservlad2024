@@ -11,8 +11,8 @@
 
 ### Testing Documentation
 
-- [Checklists](https://github.com/artichokeee/checklist)
-- [Test-Suites and Test-Cases](https://github.com/artichokeee/test-cases)
-- [Bug-Reports](https://github.com/artichokeee/bug-reports)
-- [SQL Queries](https://github.com/artichokeee/SQL)
-- [Postman Collections](https://github.com/artichokeee/postman)
+- [Checklists](https://github.com/checklistshouseindahouse/checklists)
+- [Test-Suites and Test-Cases](https://github.com/houseindahouse/test-cases)
+- [Bug-Reports](https://github.com/houseindahouse/bug-reports)
+- [SQL Queries](https://github.com/houseindahouse/SQL-queries)
+- [Postman Collections](https://github.com/houseindahouse/postman-collections)
