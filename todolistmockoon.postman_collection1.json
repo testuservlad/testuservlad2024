@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "08ba3136-7e78-4a09-9e07-f1cb2346de8c",
+		"name": "ToDoList/Mockoon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25512615"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "Список задач 1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://todo-app-sky.herokuapp.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Добавление задачи",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"ТестПостман\",\r\n    \"completed\": false,\r\n    \"order\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://todo-app-sky.herokuapp.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Список задач 2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://todo-app-sky.herokuapp.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Отметка задачи выполненной",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 91527,\r\n    \"title\": \"ТестПостман\",\r\n    \"completed\": true,\r\n    \"order\": null,\r\n    \"url\": \"/91527\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://todo-app-sky.herokuapp.com/91527"
+					},
+					"response": []
+				},
+				{
+					"name": "Список задач 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://todo-app-sky.herokuapp.com"
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление задачи",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "https://todo-app-sky.herokuapp.com/91527"
+					},
+					"response": []
+				},
+				{
+					"name": "Список задач 4",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://todo-app-sky.herokuapp.com"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Список задач",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "http://localhost:{{port}}/tutorial/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Список задач с пустым массивом",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "result",
+						"value": "empty list",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:{{port}}/tutorial/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "Создание задачи",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{faker 'datatype.uuid'}}\",\r\n    \"title\": \"\",\r\n    \"completed\": false,\r\n    \"order\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:{{port}}/tutorial/new_task"
+			},
+			"response": []
+		},
+		{
+			"name": "Создание задачи с ошибкой",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{faker 'datatype.uuid'}}\",\r\n    \"title\": \"ошибка\",\r\n    \"completed\": false,\r\n    \"order\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:{{port}}/tutorial/new_task"
+			},
+			"response": []
+		},
+		{
+			"name": "Отметка задачи о выполнение",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"7e085ed2-fae0-49e2-a6d4-c1bfc8e14035\",\r\n    \"title\": \"\",\r\n    \"completed\": true,\r\n    \"order\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:{{port}}/tutorial/update_task"
+			},
+			"response": []
+		},
+		{
+			"name": "Удаление задачи",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:{{port}}/tutorial/delete_task"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "3001",
+			"type": "string"
+		}
+	]
+}

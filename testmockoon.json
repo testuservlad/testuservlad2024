@@ -1,0 +1,230 @@
+{
+  "uuid": "49f55470-fc92-46b5-a574-2b87494718a7",
+  "lastMigration": 28,
+  "name": "Test mockoon",
+  "endpointPrefix": "tutorial",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "1be4cbc0-35bb-405a-b7cd-25a3c15b41b4",
+      "type": "http",
+      "documentation": "tasks",
+      "method": "get",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "8565c5f9-5d9a-4852-bdf6-b34017c6d6f6",
+          "body": "[\r\n    {\r\n        \"id\": 91524,\r\n        \"title\": \"Сесть на шпагат \",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91524\"\r\n    },\r\n    {\r\n        \"id\": 91515,\r\n        \"title\": \"Трудовые задачи\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91515\"\r\n    },\r\n    {\r\n        \"id\": 91523,\r\n        \"title\": \"Сходить за косметикой\",\r\n        \"completed\": true,\r\n        \"order\": null,\r\n        \"url\": \"/91523\"\r\n    },\r\n    {\r\n        \"id\": 91502,\r\n        \"title\": \"Проверка ДЗ4\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91502\"\r\n    },\r\n    {\r\n        \"id\": 91488,\r\n        \"title\": \"Покататься на велосипеде\",\r\n        \"completed\": true,\r\n        \"order\": null,\r\n        \"url\": \"/91488\"\r\n    },\r\n    {\r\n        \"id\": 91505,\r\n        \"title\": \"task 001\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91505\"\r\n    },\r\n    {\r\n        \"id\": 91508,\r\n        \"title\": \"Посмотреть фильм\",\r\n        \"completed\": true,\r\n        \"order\": null,\r\n        \"url\": \"/91508\"\r\n    },\r\n    {\r\n        \"id\": 91510,\r\n        \"title\": \"Сделать домашку №5\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91510\"\r\n    },\r\n    {\r\n        \"id\": 91511,\r\n        \"title\": \"Поспать\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91511\"\r\n    },\r\n    {\r\n        \"id\": 91512,\r\n        \"title\": \"Поспать\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91512\"\r\n    },\r\n    {\r\n        \"id\": 91513,\r\n        \"title\": \"Поспать много\",\r\n        \"completed\": true,\r\n        \"order\": null,\r\n        \"url\": \"/91513\"\r\n    },\r\n    {\r\n        \"id\": 91514,\r\n        \"title\": \"ppp\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91514\"\r\n    },\r\n    {\r\n        \"id\": 91516,\r\n        \"title\": \"открыть окно\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91516\"\r\n    },\r\n    {\r\n        \"id\": 91517,\r\n        \"title\": null,\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91517\"\r\n    },\r\n    {\r\n        \"id\": 91518,\r\n        \"title\": \"Поспать много\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91518\"\r\n    },\r\n    {\r\n        \"id\": 91519,\r\n        \"title\": \"Поспать много\",\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91519\"\r\n    },\r\n    {\r\n        \"id\": 91520,\r\n        \"title\": null,\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91520\"\r\n    },\r\n    {\r\n        \"id\": 91521,\r\n        \"title\": null,\r\n        \"completed\": false,\r\n        \"order\": null,\r\n        \"url\": \"/91521\"\r\n    },\r\n    {\r\n        \"id\": 91489,\r\n        \"title\": \"Сделать покупки \",\r\n        \"completed\": true,\r\n        \"order\": null,\r\n        \"url\": \"/91489\"\r\n    }\r\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "55a892f5-b370-49bc-83d6-97ccd798b645",
+          "body": "[]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Empty list",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "header",
+              "modifier": "result",
+              "value": "empty list",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "26ab2cc6-8240-4b1c-8389-2d62bec44951",
+      "type": "http",
+      "documentation": "new_task",
+      "method": "post",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "a3c740d9-5cad-4f46-a582-aed7fa4dbf70",
+          "body": "{\n  \"id\": \"{{faker 'datatype.uuid'}}\",\n  \"title\": \"\",\n  \"completed\": false,\n  \"order\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        },
+        {
+          "uuid": "e7537e16-837c-4037-9ab0-0fdf79bdf570",
+          "body": "{\n  \"message\": \"Недопустимое имя\"\n}",
+          "latency": 0,
+          "statusCode": 500,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "title",
+              "value": "ошибка",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "534e54b5-8a07-4cd4-aff4-c9c68ada8a43",
+      "type": "http",
+      "documentation": "update_task",
+      "method": "patch",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "1ef72fc6-ce4b-40c2-ad2d-98e36951bba0",
+          "body": "{\n  \"id\": \"{{faker 'datatype.uuid'}}\",\n  \"title\": \"\",\n  \"completed\": true,\n  \"order\": null\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    },
+    {
+      "uuid": "8b67b0d9-4246-4f57-b45a-a5116e160711",
+      "type": "http",
+      "documentation": "delete_task",
+      "method": "delete",
+      "endpoint": "",
+      "responses": [
+        {
+          "uuid": "8fc15607-15a3-4d4a-b289-e13b95789fdc",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id"
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "1be4cbc0-35bb-405a-b7cd-25a3c15b41b4"
+    },
+    {
+      "type": "route",
+      "uuid": "26ab2cc6-8240-4b1c-8389-2d62bec44951"
+    },
+    {
+      "type": "route",
+      "uuid": "534e54b5-8a07-4cd4-aff4-c9c68ada8a43"
+    },
+    {
+      "type": "route",
+      "uuid": "8b67b0d9-4246-4f57-b45a-a5116e160711"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}
