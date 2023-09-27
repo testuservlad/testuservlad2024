@@ -1,0 +1,1974 @@
+{
+	"info": {
+		"_postman_id": "832400fc-da1f-44dc-851e-17e179b34470",
+		"name": "Функциональные тест-кейсы для функциональности \"Личные события\"",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25512615"
+	},
+	"item": [
+		{
+			"name": "Отображение личных событий, на портале для преподавателей.",
+			"item": [
+				{
+					"name": "Открыть страницу для отображения личных событий",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}events"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Создание личного события через клик на \"+\".",
+			"item": [
+				{
+					"name": "Создание личного события через клик на \"+\", на портале для преподавателей.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на кнопку \"+\", для добавления нового события;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T00:00:00+03:00\",\r\n    \"till\": \"2023-09-29T23:59:58+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Нажать на превью \"Личное событие\"; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T14:00:00+03:00\",\r\n    \"till\": \"2023-08-30T15:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Ввести данные для создания личного события и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"\",\r\n    \"title\": \"Урок 1\",\r\n    \"startAt\": \"2023-08-31T12:00:00+03:00\",\r\n    \"endAt\": \"2023-08-31T13:00:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}createPersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Обновить страницу и найти созданное личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Нажать на созданное личное событие, и в открывшемся окне нажать кнопку \"Удалить\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}removePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Обновить страницу и убедиться, что личное событие было удалено.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Создание личного события через клик на \"+\" на будущий год, на портале для преподавателей.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. В правом верхнем углу, промотать слайдер до первой недели 2024-го года;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2024-01-01T00:00:00+03:00\",\r\n    \"till\": \"2024-01-08T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Нажать на кнопку \"+\", для добавления нового события;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T00:00:00+03:00\",\r\n    \"till\": \"2023-09-29T23:59:58+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Нажать на превью \"Личное событие\"; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T14:00:00+03:00\",\r\n    \"till\": \"2023-08-30T15:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Ввести данные для создания личного события и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"\",\r\n    \"title\": \"Урок 1\",\r\n    \"startAt\": \"2024-01-07T12:00:00+03:00\",\r\n    \"endAt\": \"2024-01-07T13:00:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}createPersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Обновить страницу и найти созданное личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Нажать на созданное личное событие, и в открывшемся окне нажать кнопку \"Удалить\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}removePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "8. Обновить страницу и убедиться, что личное событие было удалено.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Создание личного события через клик на \"+\" на прошлый год, на портале для преподавателей.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. В правом верхнем углу, отмотать слайдер до первой недели 2024-го года; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2024-01-01T00:00:00+03:00\",\r\n    \"till\": \"2024-01-08T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Нажать на кнопку \"+\", для добавления нового события;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T00:00:00+03:00\",\r\n    \"till\": \"2023-09-29T23:59:58+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Нажать на превью \"Личное событие\"; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T14:00:00+03:00\",\r\n    \"till\": \"2023-08-30T15:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Ввести данные для создания личного события и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"\",\r\n    \"title\": \"Урок 1\",\r\n    \"startAt\": \"2022-12-17T12:00:00+03:00\",\r\n    \"endAt\": \"2022-12-17T13:00:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}createPersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Обновить страницу и найти созданное личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Нажать на созданное личное событие, и в открывшемся окне нажать кнопку \"Удалить\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}removePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "8. Обновить страницу и убедиться, что личное событие было удалено.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Создание личного события через клик на \"+\"с невалидными данными, на портале для преподавателей.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на кнопку \"+\", для добавления нового события;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T00:00:00+03:00\",\r\n    \"till\": \"2023-09-29T23:59:58+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Нажать на превью \"Личное событие\"; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T14:00:00+03:00\",\r\n    \"till\": \"2023-08-30T15:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Ввести данные для создания личного события и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"\",\r\n    \"title\": \"<!DOCTYPE html><html><body><h1>My First \",\r\n    \"startAt\": \"2023-09-02T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-02T19:00:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}createPersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Обновить страницу и найти созданное личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Нажать на созданное личное событие, и в открывшемся окне нажать кнопку \"Удалить\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}removePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Обновить страницу и убедиться, что личное событие было удалено.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Создание личного события через клик на пустое поле.",
+			"item": [
+				{
+					"name": "Создание личного события через клик на \"+\", на портале для преподавателей.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на пустое поле в таблице, для добавления нового события;",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-09-02T16:30:00+03:00\",\r\n    \"till\": \"2023-09-02T17:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Нажать на превью \"Личное событие\"; Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-30T14:00:00+03:00\",\r\n    \"till\": \"2023-08-30T15:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Ввести данные для создания личного события и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"\",\r\n    \"title\": \"Урок 1\",\r\n    \"startAt\": \"2023-08-31T12:00:00+03:00\",\r\n    \"endAt\": \"2023-08-31T13:00:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}createPersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Обновить страницу и найти созданное личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Нажать на созданное личное событие, и в открывшемся окне нажать кнопку \"Удалить\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}removePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Обновить страницу и убедиться, что личное событие было удалено.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Редактирование личного события",
+			"item": [
+				{
+					"name": "Цепочное редактирование личного события, с применением к событию всех цветов.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на существующее личное событие и нажать \"Редактировать\";",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-09-02T15:30:00+03:00\",\r\n    \"till\": \"2023-09-02T17:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Изменить цвет с серого на жёлтый, и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Тест123456\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": {{PersonalID}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Нажать на существующее личное событие и нажать \"Редактировать\"; Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "5. Изменить цвет с жёлтого на зелёный, и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Тест123456\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": {{PersonalID}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "6. Нажать на существующее личное событие и нажать \"Редактировать\"; Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "7. Изменить цвет с зелёного на сиреневый, и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Тест123456\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": {{PersonalID}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "8. Нажать на существующее личное событие и нажать \"Редактировать\"; Copy 3",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "9. Изменить цвет с сиреневого на серый, и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Тест123456\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": {{PersonalID}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "10. Обновить страницу для того, чтобы увидеть изменённое личное событие в таблице.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Редактирование личного события, с изменением содержимого.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на существующее личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-09-02T15:30:00+03:00\",\r\n    \"till\": \"2023-09-02T17:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Изменить название с \"Урок 1\" на \"Урок 2\" и нажать кнопку \"Сохранить\";",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Урок 2\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": 87787223,\r\n    \"oldStartAt\": \"2023-09-02T18:30:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Обновить страницу для отображения изменённого личного события в таблице.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Редактирование личного события, без изменения содержимого.",
+					"item": [
+						{
+							"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\".",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "2. Нажать на существующее личное событие;",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-09-02T15:30:00+03:00\",\r\n    \"till\": \"2023-09-02T17:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						},
+						{
+							"name": "3. Не производить никаких изменений в личном событии, и нажать кнопку \"Сохранить\".",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var key = \"PersonalID\"\r",
+											"var value = pm.response.json().data.payload.id\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"var key = \"startAt\"\r",
+											"var value = pm.response.json().data.startAt\r",
+											"pm.collectionVariables.set(key, value);\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"backgroundColor\": \"#F9EBFF\",\r\n    \"color\": \"#D478F1\",\r\n    \"description\": \"123123\",\r\n    \"title\": \"Урок 1\",\r\n    \"startAt\": \"2023-09-03T18:30:00+03:00\",\r\n    \"endAt\": \"2023-09-03T19:00:00+03:00\",\r\n    \"id\": 87787223,\r\n    \"oldStartAt\": \"2023-09-02T18:30:00+03:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}updatePersonal"
+							},
+							"response": []
+						},
+						{
+							"name": "4. Обновить страницу для отображения изменённого личного события в таблице.",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cookie",
+										"value": "token_global={{token_global}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseURL}}events"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Удаление личного события, на портале для преподавателей.",
+			"item": [
+				{
+					"name": "1. На портале для преподавателей, открыть вкладку \"Расписание\";",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}events"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Нажать на существующее личное событие и нажать \"Редактировать\"; Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-09-02T15:30:00+03:00\",\r\n    \"till\": \"2023-09-02T17:00:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"event.class\",\r\n        \"slot\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}events"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Нажать кнопку \"удалить\".",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{PersonalID}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}removePersonal"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Обновить страницу для отображения отсутствия личного события после удаления, в таблице.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token_global}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-08-28T00:00:00+03:00\",\r\n    \"till\": \"2023-09-04T00:00:00+03:00\",\r\n    \"onlyTypes\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseURL}}events"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token_global",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/"
+		},
+		{
+			"key": "PersonalID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
