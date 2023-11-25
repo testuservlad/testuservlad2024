@@ -2,13 +2,13 @@
 
 ## Инфо обо мне 
 
-Привет! Меня зовут ``Влад``! Я - начинающий тестировщик/QA Engineer <br>
+Привет! Меня зовут ``Влад``! Я - начинающий тестировщик/QA Engineer.<br>
 В этом репозитории вы можете найти некоторые из моих проектов, выполненных во время обучения и практики.
 <br>
 
 ## Навыки и технологии
-``Jira``,``qase.io``,``SQL``,`` Postman``,``Fiddler``, ``Swagger``, ``Trello``, <br>
-``SoapUI``, ``Charles``, ``Git``, ``Chrome DevTools``.
+``Jira``,``qase.io``,``SQL``,`` Postman``,``Fiddler``, ``Swagger``, <br>
+``Trello``, ``SoapUI``, ``Charles``, ``Git``, ``Chrome DevTools``.
 
 
 
