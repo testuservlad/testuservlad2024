@@ -8,7 +8,7 @@
 
 ## Навыки и технологии
 ``Jira``,``qase.io``,``SQL``,`` Postman``,``Fiddler``, ``Swagger``, ``Trello``, <br>
-``SoapUI``, ``Android Studio``, ``xCode``, ``Charles``, ``Git``, ``Chrome DevTools``.
+``SoapUI``, ``Charles``, ``Git``, ``Chrome DevTools``.
 
 
 
@@ -18,8 +18,8 @@
 <p> Проект 1: тест веб-приложения для учителей от Skyeng</p>
 <p>Что нужно было сделать:<p>
 <ol>
-  <li>Задача №1</li>
-  <li>Задача №2.</li>
+  <li>1) </li>
+  <li>2) </li>
 </ol>
 
 <p>Как решала(-а): краткое описание решения (автореферат)<p>
