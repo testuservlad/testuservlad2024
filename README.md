@@ -62,4 +62,4 @@
 ## Контактная информация
 - Email: vlatachi@gmail.com;
 - LinkedIn: https://www.linkedin.com/in/vladtester2023/;
-- TG: www.t.me/houseindahouse
+- TG: www.t.me/youretearingmeapart
